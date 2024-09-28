@@ -1,0 +1,84 @@
+database -> table : relational
+
+
+	DBMS 
+RDBMS : ORACLE   
+
+OODBMS
+
+DDBMS : 
+ 
+
+data format store -> dbms 
+	
+signup -> firstname lastname email password -> save -> table -> relational -> RDBMS 
+
+
+table -> Rows X Cols
+
+cols : fields : firstName 
+rows : collections of cols : record : tuple 
+
+DDL 
+	create
+	
+	
+	char -> single character 
+	char(10) -> 10 character --> string [alphabet,digit]
+ 	varchar(10) -> 10 character -> string [ alpha numeric] 
+	varchar2(10) -> 10 character -> string [ alpha numeric] 
+
+	char 	
+	ram :10{3}{-7}. . . . . . . . . . | . . . . . . . . . . | .... . . . . . |  
+	shyam  :10{5}{-5}
+	rock: 10{5}{-5} 
+
+
+	varchar 
+	ram :10{3}
+	shyam:10{5}
+	
+
+	varchar2(10) 
+
+
+	numeric :
+		whole number : 24 58 69 --> integer -> int integer  integer(3) 
+		fraction - real number --> float -->
+
+	boolean 
+
+	int(1) -> 0 1 2 3 4 5 6 7 8 9  
+ 
+
+
+
+table ->
+
+	create table users(
+		firstName varchar2(20),
+		lastName varchar2(20),
+		email varchar2(20),
+		password varchar2(20) 
+	); 
+
+	//record -> 80byte -> * 100 -> 8000byte -> users table ->table space  
+
+	//record -> 80byte -> * 50 -> 4000byte -> users table ->table space  
+
+	
+	//role->20 ->
+
+
+
+	1000mb 
+	20mb * 50 => 1000 -> 20mb -> allocate 
+
+
+
+
+
+
+
+
+
