@@ -77,8 +77,165 @@ table ->
 
 
 
+oracle ? install 
+livesql 
 
 
 
 
 
+ describe users;  -> get the schema of table -> 
+			all column name , data type , constraints 
+
+
+ desc users; 
+
+----------------------------------------------------------------------
+project -> table? 
+
+ERD -> 
+
+
+royal wants to store information of the students in their database 
+we want to store all personal information 
+like firstname , lastname,  email, password ,gender of the user 
+
+royal also stores students status like active or not 
+
+design student table - columns with best suitable  data type 
+
+----------------------------------------------------------------------
+create table students (
+	firstName varchar2(20),
+	lastName varchar2(20),
+	email varchar2(20),
+	password varchar2(20),
+	gender char(1),
+	status int(1) 
+); 
+
+
+gender char(1), //M F O N
+status -> 0 : inActive 1:Active 
+
+
+we need to add date of joining ? 
+
+date_of_joining 
+
+dateOfJoining date
+
+
+
+
+data type -> 
+
+								DATA TYPE 
+1) oracle built in data type 
+2) ANSI_supported_data type 
+3) user define data type 
+4) oracle supplied data type 
+
+
+
+1) oracle built in data type 
+1.1) character data type 
+1.2) number data type 
+1.3) datetime data type 
+1.4) long_and_raw data type 
+1.5) rowid data type 
+1.6) large object data type 
+
+
+
+1.1) character data type 
+char 
+varchar
+varchar2 
+Nchar*** 
+Nvarchar2***
+
+
+1.2) number data type 
+	number 
+	float 
+
+1.3) datetime data type 
+	date 
+	03-10-2024 12.15 time ->  USA
+	timestamp
+
+
+
+char 
+varchar
+varchar2
+number
+float
+date 
+timestamp
+
+-------------------------------------------------------------
+
+create table students (
+	firstName varchar2(20),
+	lastName varchar2(20),
+	email varchar2(20),
+	password varchar2(20),
+	gender char(1),
+	status int
+); 
+
+desc students; 
+
+					
+alter -> alter command is used to modify table structure / table schema 
+			1) add 
+			2) rename 
+			3) drop 
+			4) modify 
+
+Q: Oct month -> birthday -> 1 movie tickets => 
+Q: we want to add dateOfBirth column in students table 
+
+ans : alter table students add dateOfBirth date;
+
+
+Q: gender size 1 character {M / F} , resize 10 male female , gender:1->10 
+ans : alter table students modify gender char(10);
+
+Q: remove status column from students table ? 
+Ans : alter table students drop column status ;  
+
+------------------------------------------------------------
+
+1) create table employee with employeeId , name , salary and department. 
+	create table employees(
+		employeeId int , 
+		name varchar2(20),
+		salary int, 
+		department varchar2(20)
+	);
+
+2) add new column region in employee table 
+	ALTER TABLE employees ADD region VARCHAR2(30);
+3) split name column into two , firstName and lastName 
+	ALTER TABLE employees DROP COLUMN name; 
+	ALTER TABLE employees ADD firstName varchar2(20)
+	ALTER TABLE employees ADD lastName varchar2(20)
+	
+4) firstName must be varchar2(20) and lastName must be varchar2(25)
+	ALTER TABLE employees modify lastName varchar2(25);
+
+5) change salary column name with payout 
+	ALTER TABLE employees RENAME COLUMN salary TO payout;
+
+-----------------------------------------------------------------------------------------
+
+DDL ->  permanently removes the data and metadata - table 
+		DROP
+
+	DROP TABLE employees; 
+
+recyclebin -> 
+------------------------------------------------------------------------------------------	
