@@ -239,3 +239,230 @@ DDL ->  permanently removes the data and metadata - table
 
 recyclebin -> 
 ------------------------------------------------------------------------------------------	
+
+
+Question:- 
+
+Which of the following keyword is used with Data Control Language (DCL) statements?
+a) INSERT
+b) SELECT
+c) GRANT
+d) DELETE
+
+
+Which of the following command is used to obtain the structure of an Oracle table?
+a) DESC TABLE [TableName].
+b) STRUCTURE [TableName].
+c) DESCRIBE [TableName].
+d) DESCRIBE STRUCTURE [TableName].
+
+
+Which of the following is not a type of SQL statement?
+a) Data Definition Language (DDL)
+b) Data Control Language (DCL)
+c) Data Communication Language (DCL)
+d) Data Manipulation Language (DML)
+
+
+
+command to use iscommand is used for removing a table and all its data from the database?
+a) Alter table command
+b) Create command
+c) Drop table command
+d) All of the Mentioned
+
+
+Which of the following is/are the DDL statements?
+A) Drop
+B) Alter
+C) Create
+D) All of the Mentioned	
+
+
+--------------------------------------------------------------
+
+
+How to change table name / rename table name? 
+
+
+alter -> table schema -> 
+
+
+rename table oldTableName to newTableName;
+
+
+***how to list all user created table in oracle? 
+
+
+insert -> 
+	insert command will insert records in a table 
+
+
+	insert -> DML -> 
+
+	5 record : employees 
+	
+	we have two ways to insert record :- 
+
+	INSERT INTO table_name (column1, column2, column3, ...)
+	VALUES (value1, value2, value3, ...);
+
+	INSERT INTO table_name
+	VALUES (value1, value2, value3, ...);
+
+	insert into employees (1,'ram',10000,'HR');
+	insert into employees (employeeId,name,salary,department) values (2,'Shyam',20000,'SL'); 
+
+	insert few columns ?
+	insert into employees (employeeId,name) values (15,'Sakira');
+
+
+	insert multiple records? 
+
+	insert into employees (employeeId,name,salary,department)
+				values 
+				(4,'Sita',25000,'HR'),
+				(20,'Gita',25000,'Admin'),
+				(24,'Mita',15000,'Sales')
+				; 
+
+
+insert into employees values (5,'Ravan',14000,'SL');
+
+
+insert into employees (employeeId,name) values (17,'Sahdev');
+
+insert into employees (employeeId,name,salary,department) values (11,'rock',14000,'Admin'),(12,'sam',24000,'Admin');
+
+
+---NotRecommnded-----
+insert all into employees values (11,'rock',14000,'Admin')
+		  into employees values  (12,'sam',24000,'Admin')
+		  select * from dual 
+		  ;
+----------------------------------------------------------------------
+
+db sql -> query -> auto save ?? ? ? ? 
+save ---> commit ; 
+insert -> auto commit -> 
+
+insert ---> 
+1
+2
+3
+terminate? 
+data loss [3 record]
+
+
+insert -->
+1
+2
+commit 
+3 
+terminate? 
+data loss[1 record]
+
+DDL commands are auto commit  : 
+	no commit required 
+DML commands are not auto commit : 
+	you must have to write commit 
+
+oracle -> default auto_commit -> is -> set -> FALSE 
+
+
+list all the records from the table ?
+select 
+
+select * from employees; 
+
+* -> all columns -> 
+
+create 
+insert 1 
+insert 2 
+insert 3 
+3 insert -> wrong -> 
+rollback ; 
+
+
+---------------------------------------------------------------
+
+display all the department name ? 
+
+select department from employees; 
+
+DEPARTMENT
+--------------------
+HR
+SL
+
+Admin
+Admin
+
+now list all the department - uniqueue 
+distinct 
+select distinct department from employees; 
+
+count how many total department we have ? 
+
+select count(*) from employees; 
+
+
+select count(name) from employees; 
+
+select count(salary) from employees; 
+
+select count(salary) TOTAL_DEPT from employees; 
+
+
+select count(salary) as TOTAL_DEPT from employees; 
+
+
+
+select count(salary) as "TOTAL DEPT" from employees; 
+
+----------------------------------------------------------------------
+
+
+find out the highest salary ? 
+max(colm) -> max value 
+
+select max(salary) from employees; 
+
+
+//below will not work 
+select max(salary),max(name) from employees; 
+
+
+find out who is getting highest salary? 
+nested query => sub query => 
+condition => 
+
+query => condition => where clause => 
+
+select name from employees where salary = 14000 ;
+
+
+
+select name from employees where salary = (select max(salary) from employees) ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
