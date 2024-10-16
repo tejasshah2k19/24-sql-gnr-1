@@ -1,0 +1,31 @@
+Task 1: Create a table named Students with the following fields: 
+    student_id, first_name, last_name, and age.
+
+Task 2: Create a table named Courses with the following fields: 
+    course_id, course_name, and credits.
+
+Task 3: Insert at least three records into each table.
+
+Task 4: Select all records from the Students table.
+
+Task 5: Select only the first_name and age of all students from the Students table.
+
+Task 6: Select all records from the Courses table where credits are greater than 3.
+
+Task 7: Select students whose age is greater than 21.
+
+Task 8: Select courses and sort them by course_name in ascending order.
+
+Task 9: Select students whose last_name starts with "S".
+
+Task 10: Add a new column email to the Students table.
+
+Task 11: Modify the credits column in the Courses table to accept decimal values.
+
+Task 12: Select the total number of students in the Students table.
+
+Task 13: Select the maximum and minimum age from the Students table.
+
+Task 14: Select distinct course_name from the Courses table.
+
+Task 15: Select students who are older than 21 and display only their first_name and last_name.

@@ -447,7 +447,7 @@ select name from employees where salary = 14000 ;
 select name from employees where salary = (select max(salary) from employees) ;
 
 
-
+---------------------------------------------------------------------------------
 
 
 
