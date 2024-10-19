@@ -450,8 +450,26 @@ select name from employees where salary = (select max(salary) from employees) ;
 ---------------------------------------------------------------------------------
 
 
+sort the data -> 
+
+order by clause -> 
+1) ascending
+2) descending
+
+select * from students order by firstName; //sort students using firstName 
+select * from students order by firstName asc; //sort students using firstName 
+
+select * from students order by firstName desc; //sort students using firstName in descending order 
 
 
+ravan patel 
+ram   patel 
+shyam bhatt 
+ravan gajjar 
+
+select * from students order by firstName asc, lastName desc; 
+
+-------------------------------------------------------------------------------------
 
 
 

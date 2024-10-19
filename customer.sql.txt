@@ -1,0 +1,43 @@
+CREATE TABLE Customer (
+    customerID INT  ,
+    customerName VARCHAR(255),
+    contactName VARCHAR(255),
+    address VARCHAR(255),
+    city VARCHAR(100),
+    postalCode VARCHAR(20),
+    country VARCHAR(100),
+    dateOfBirth DATE
+);
+
+INSERT INTO Customer (CustomerID, CustomerName, ContactName, Address, City, PostalCode, Country, DateOfBirth)
+VALUES (1, 'Acme Corporation', 'John Doe', '123 Acme St', 'New York', '10001', 'USA', '1980-05-15');
+
+INSERT INTO Customer (CustomerID, CustomerName, ContactName, Address, City, PostalCode, Country, DateOfBirth)
+VALUES (2, 'Tech Solutions', 'Jane Smith', '456 Tech Blvd', 'San Francisco', '94103', 'USA', '1985-07-20');
+
+
+INSERT INTO Customer (CustomerID, CustomerName, ContactName, Address, City, PostalCode, Country, DateOfBirth)
+VALUES (3, 'Global Enterprises', 'Emily Johnson', '789 Global Rd', 'Los Angeles', '90001', 'USA', '1990-03-22');
+
+INSERT INTO Customer (CustomerID, CustomerName, ContactName, Address, City, PostalCode, Country, DateOfBirth)
+VALUES (4, 'Innovate Ltd', 'Michael Brown', '321 Innovate Ave', 'Chicago', '60601', 'USA', '1978-10-05');
+
+INSERT INTO Customer (CustomerID, CustomerName, ContactName, Address, City, PostalCode, Country, DateOfBirth)
+VALUES (5, 'NextGen Inc', 'Sophia Williams', '654 NextGen St', 'Austin', '73301', 'USA', '1982-12-30');
+
+INSERT INTO Customer (CustomerID, CustomerName, ContactName, Address, City, PostalCode, Country, DateOfBirth)
+VALUES (6, 'Bright Future Co', 'David Lee', '987 Future Lane', 'Seattle', '98101', 'USA', '1992-11-17');
+
+INSERT INTO Customer (CustomerID, CustomerName, ContactName, Address, City, PostalCode, Country, DateOfBirth)
+VALUES (7, 'Creative Minds', 'Olivia Davis', '741 Creative Blvd', 'Miami', '33101', 'USA', '1988-09-14');
+
+
+INSERT INTO Customer (CustomerID, CustomerName, ContactName, Address, City, PostalCode, Country, DateOfBirth)
+VALUES (8, 'Tech Pioneers', 'James Wilson', '852 Pioneer St', 'Boston', '02101', 'USA', '1975-04-12');
+
+INSERT INTO Customer (CustomerID, CustomerName, ContactName, Address, City, PostalCode, Country, DateOfBirth)
+VALUES (9, 'Visionary Solutions', 'Isabella Miller', '963 Visionary Rd', 'Denver', '80201', 'USA', '1995-02-28');
+
+INSERT INTO Customer (CustomerID, CustomerName, ContactName, Address, City, PostalCode, Country, DateOfBirth)
+VALUES (10, 'Future Tech Ltd', 'Liam Taylor', '159 Future Blvd', 'Houston', '77001', 'USA', '1987-06-21');
+

@@ -1,0 +1,59 @@
+1: Create a table named Employees with the following fields: employee_id, first_name, last_name, salary, and department.
+
+2: Create a table named Departments with the fields department_id and department_name.
+
+3: Insert at least five records into both the Employees and Departments tables.
+
+4: Select all columns from the Employees table.
+
+5: Select the first_name, position, and salary of all employees.
+
+6: Select all the employees who work in the "HR" department.
+
+7: Select the first_name, last_name, and salary of employees whose salary is greater than 50,000
+
+8: Select employees who work as 'Manager'
+
+9: Select all employees and order them by salary in descending order
+
+10: Select all departments located in 'New York'
+
+11: Select employees whose salary is between 30,000 and 70,000.
+
+12: Select all employees who work in either "IT" or "Finance" departments
+
+13: Select employees whose first_name ends with "a" and last_name starts with "B"
+
+14: Add a new column hire_date to the Employees table
+
+15: Select the average salary of all employees in the Employees table.
+
+16: Select the first_name, last_name of the employee with the highest salary
+
+
+
+INSERT INTO Employees (employee_id, first_name, last_name, position, salary)
+VALUES 
+(1, 'John', 'Doe', 'Manager', 75000);
+
+INSERT INTO Employees (employee_id, first_name, last_name, position, salary)
+VALUES (2, 'Jane', 'Smith', 'Engineer', 65000);
+
+INSERT INTO Employees (employee_id, first_name, last_name, position, salary)
+VALUES (3, 'Robert', 'Brown', 'Technician', 40000);
+
+INSERT INTO Employees (employee_id, first_name, last_name, position, salary)
+VALUES (4, 'Emily', 'Davis', 'Manager', 80000);
+
+
+INSERT INTO Departments (department_id, department_name, location)
+VALUES (101, 'Human Resources', 'New York');
+
+INSERT INTO Departments (department_id, department_name, location)
+VALUES (102, 'Engineering', 'San Francisco');
+
+INSERT INTO Departments (department_id, department_name, location)
+VALUES (103, 'Operations', 'Chicago');
+
+
+-----------------------------------------------------------------
