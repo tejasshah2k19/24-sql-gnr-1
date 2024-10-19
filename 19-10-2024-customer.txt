@@ -1,0 +1,56 @@
+1) print all unique cities from customers 
+2) List all the customers who lives in miami city
+3) find out total customers who lives in seattle , boston, and  san Francisco     
+4) list all the customers who's postal is 73301 
+5) list all the customers who's postal is 73301 or 33101 or 98101 
+6) list all the customers who are not lives in Denver and Austin 
+    
+    
+    
+
+1-5. ALTER Queries
+Q1: Write a query to add a new column PhoneNumber of type VARCHAR(15) to the Customer table.
+Q2: How do you modify the DateOfBirth column to have a NOT NULL constraint?
+Q3: Write a query to rename the Address column to StreetAddress in the Customer table.
+Q4: Add a Gender column of type CHAR(1) to the Customer table with a default value of 'M'.
+Q5: Drop the PostalCode column from the Customer table.
+6-10. SELECT Queries
+Q6: Write a query to select all the CustomerName and City from the Customer table.
+Q7: Write a query to select distinct City values from the Customer table.
+Q8: Write a query to fetch all columns of the Customer table where City is 'New York'.
+Q9: Write a query to fetch CustomerName and Country where the Country is 'USA' and City is 'Chicago'.
+Q10: Write a query to fetch the first 5 records from the Customer table.
+11-15. WHERE and ORDER BY Queries
+Q11: Write a query to fetch all customers where Country is either 'USA' or 'Canada'.
+Q12: Write a query to fetch all records from the Customer table where City is not 'Los Angeles'.
+Q13: Write a query to fetch all records where the CustomerName starts with 'A'.
+Q14: Write a query to order all records by DateOfBirth in ascending order.
+Q15: Write a query to select all records ordered by Country in descending order and City in ascending order.
+16-20. GROUP BY Queries
+Q16: Write a query to count the number of customers in each City.
+Q17: Write a query to count the number of customers in each Country where the Country has more than 1 customer.
+Q18: Write a query to calculate the average PostalCode (if numeric) for each City.
+Q19: Write a query to fetch the City and the minimum DateOfBirth for each city.
+Q20: Write a query to group customers by Country and show the total number of customers for each country.
+21-25. AND, OR, NOT Queries
+Q21: Write a query to fetch all records where City is 'Chicago' AND Country is 'USA'.
+Q22: Write a query to fetch all customers where City is 'New York' OR City is 'Los Angeles'.
+Q23: Write a query to fetch all records where the City is 'Seattle' AND the Country is NOT 'USA'.
+Q24: Write a query to fetch all customers where the CustomerName contains 'Tech' AND the Country is 'USA'.
+Q25: Write a query to fetch all customers where City is NOT 'Miami' OR DateOfBirth is after '1980-01-01'.
+26-30. BETWEEN Queries
+Q26: Write a query to fetch all customers where DateOfBirth is BETWEEN '1980-01-01' and '1990-12-31'.
+Q27: Write a query to fetch all customers where CustomerID is BETWEEN 3 and 8.
+Q28: Write a query to fetch all customers where PostalCode is BETWEEN '10000' and '50000' (assuming PostalCode is numeric).
+Q29: Write a query to fetch all customers where DateOfBirth is NOT BETWEEN '1970-01-01' and '1980-12-31'.
+Q30: Write a query to fetch all customers where the CustomerID is NOT BETWEEN 5 and 10.   
+    
+    
+    
+    
+select city from custeroms  -> gives all the cities from customers table 
+
+select distinct city from customers; -> gives all the unique city from customers table 
+select unique city from customers;  -> same as above 
+
+
