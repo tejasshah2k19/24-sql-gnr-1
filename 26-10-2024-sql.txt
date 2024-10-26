@@ -1,0 +1,41 @@
+Write a query to create a table named Books with the following columns:
+
+book_id (Primary Key, Integer, Auto-Increment)
+title (VARCHAR, 100 characters)
+author (VARCHAR, 50 characters)
+published_year (YEAR)
+price (Decimal with two decimal places)
+
+
+Write a query to add a new column named genre (VARCHAR, 50 characters) to the Books table.
+
+Insert data into the Books table with the following information:
+
+title: "To Kill a Mockingbird", author: "Harper Lee", published_year: 1960, price: 9.99
+
+Insert three different book records into the Books table with your choice of titles, authors, published years, and prices.
+
+ 
+Write a query to update the price of "To Kill a Mockingbird" to 8.99.
+
+Update the published_year for all book to 1970 where published_year is before 1968.
+
+Delete the record from the Books table where the title is "To Kill a Mockingbird".
+
+Delete all records in the Orders table where the quantity is greater than 5.
+ 
+Write a query to select all columns from the Books table.
+
+Write a query to select only title and price from the Books table, and order the results by price in descending order.
+
+Retrieve books published after the year 2000 from the Books table.
+ 
+Write a query to find all books in the Books table with a price greater than 15.
+
+Write a query to find the total number of books in the Books table.
+
+Write a query to calculate the average price of books in the Books table.
+
+Find the highest price of any book in the Books table.
+
+
