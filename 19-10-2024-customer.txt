@@ -54,3 +54,17 @@ select distinct city from customers; -> gives all the unique city from customers
 select unique city from customers;  -> same as above 
 
 
+
+default value -> if user will not input ? 
+
+create table students(
+    student_id int, 
+    firstName varchar2(20),
+    email varchar2(20),
+    city varchar2(20) DEFAULT 'GNR',
+    salary decimal(8,2)
+);
+
+decimal(8,2) -> floating point value 
+             -> total we have 8 digits 
+             -> 3 floating point 

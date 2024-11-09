@@ -1,6 +1,6 @@
 Write a query to create a table named Books with the following columns:
 
-book_id (Primary Key, Integer, Auto-Increment)
+book_id (Primary Key, Integer)
 title (VARCHAR, 100 characters)
 author (VARCHAR, 50 characters)
 published_year (YEAR)

@@ -1,0 +1,16 @@
+Write a query to create a table Employee with columns: 
+emp_id (unique), name (not null), salary (greater than 0), and department (default value "General").
+also follow below rules: 
+Add a unique constraint to the Employee table to ensure that each employee's name is unique.
+Add a check constraint to the Employee table to ensure the salary is always greater than 0.
+
+
+Insert a record into the Employee table with an emp_id, name, and salary.
+Ensure the department defaults to "General" if not specified.
+
+Update the salary of an employee with emp_id = 5 to 70000 in the Employee table.
+
+Write a query to delete employees from the Employee table where the salary is less than 30000.
+
+Insert a new record into the Employee table and let the department column use its default value.
+

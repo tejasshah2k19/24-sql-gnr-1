@@ -1,0 +1,142 @@
+SQL -> create 
+       alter 
+       insert 
+       select 
+
+
+DML -> update delete 
+
+table -> records -> modification -> 
+    update 
+
+table ->record-> remove ->
+    delete 
+
+
+update tableName set colum = value; 
+
+update employees set department = 'HR'; //it will update all the records with 'HR' department 
+
+update employees set department = 'HR' where employeeId = 6; 
+
+can we update multiple cols ? or multiple values ? 
+ans: yes 
+
+bhim department -> HR and salary -> 25000 
+    update employees set department = 'HR' , salary = 25000 where employeeId = 6 ; 
+
+
+diwali -> 10% increment in the salary :
+
+
+EMPLOYEEID NAME                     SALARY DEPARTMENT
+---------- -------------------- ---------- --------------------
+         4 Sita                      25000 HR
+         5 Ravan                     14000 SL
+         6 Bhim                      25000 HR
+        11 rock                      14000 Admin
+        12 sam                       24000 Admin
+        16 Nakul
+
+
+
+update employees set salary = salary * 0.1 ; 
+
+
+update employees set salary = salary * 0.1  where employeeId = 6; 
+
+
+update employees set salary = salary  + salary * 0.1; 
+ 
+--------------------------------------------------------------------------
+
+delete from tableName; 
+delete from tableName where column = value; 
+
+delete from employees; //this will remove all the records 
+DELETE from employees where department is null; 
+
+
+delete from employees; // all records remove 
+truncate table employees; //all records remove 
+
+truncate -> auto_commit 
+delete -> not 
+
+
+delete from employees; // all records remove 
+rollback; //undo => ctrl+z -> get back all records 
+
+
+
+truncate table employees;// 
+rollback; //
+
+
+-----------------------------------------------------------------
+
+
+diwali -> 
+    students -> 
+        certificate -> 
+
+
+students table ->
+    name 
+    collegeName
+    batchType 
+    email  : unique
+    mobile : unique 
+    discipline
+    regularity
+    communication
+    testPerformance 
+
+
+Constraints : Rule 
+    constraints are used to mention rules for data in table. 
+
+    NOT NULL
+    UNIQUE 
+    PRIMARY KEY 
+    FOREIGN KEY 
+    DEFAULT 
+    CHECK  
+
+    constraints can be applied when we create table. 
+    CREATE TABLE -> 
+    ALTER TABLE  -> 
+
+    constraints can be applied on column level or on table level. 
+
+
+
+NOT NULL -> input data -> must -> null values are not permited 
+
+
+    create table studentReport (
+        name varchar2(30) NOT NULL , 
+        collegeName varchar2(30),
+        batchType varchar2(20),
+        email  varchar2(30) UNIQUE,
+        mobile varchar2(12) UNIQUE,
+        discipline int check (discipline >= 1 and discipline <=5 ),
+        regularity int,
+        communication int,
+        testPerformance  int
+    ); 
+
+
+    insert into studentReport (collegeName) values ('SAU');
+
+    insert into studentReport (name) values ('SAU');
+
+    insert into studentReport (name,discipline) values ('SAU',-1);
+    
+    insert into studentReport (name,discipline) values ('SAU',10);
+    
+    insert into studentReport (name,discipline) values ('SAU',3);
+
+    insert into studentReport (name,discipline,email) values ('SAU',3,'jack@gmail.com');
+
+-------------------------------------------------------------------------------------------------

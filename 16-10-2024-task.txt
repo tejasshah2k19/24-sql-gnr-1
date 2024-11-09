@@ -29,3 +29,10 @@ Task 13: Select the maximum and minimum age from the Students table.
 Task 14: Select distinct course_name from the Courses table.
 
 Task 15: Select students who are older than 21 and display only their first_name and last_name.
+
+
+
+
+
+
+ 
