@@ -1,0 +1,74 @@
+Primary Key 
+Foreign Key 
+
+
+Primary Key ===> NOT NULL + UNIQUE 
+            ===> relation 
+
+
+GujaratUniversity 
+
+Course :- 
+------------------------------------------
+CourseCode | CourseName|Fees|DurationYear|
+------------------------------------------
+B12        |  BCA      |5000|3 Year      |
+------------------------------------------
+C12        |  MCA      |7000|2 Year      |
+------------------------------------------
+M12        |  BBA      |6000|3 Year      |
+------------------------------------------
+D12        |  MBA      |6000|2 Year      |
+------------------------------------------
+
+
+Student :- 
+vishwa      darji   vishwa@gmail.com    secret123  C12  MCA 7000 2 year 
+vishwa      soni    vishwa2@gmail.com   secret1234 C12  MCA 7000 2 year 
+Het         Patel   het@gmail.com       secret3333 D12  MBA 6000 1.5 year 
+   
+
+
+
+Student :- 
+vishwa      darji   vishwa@gmail.com    secret123  C12   
+vishwa      soni    vishwa2@gmail.com   secret1234 C12   
+Het         Patel   het@gmail.com       secret3333 D12   
+   
+
+
+create table book {
+     bookId int Primary key, 
+     title varchar2(20),
+     author varchar2(20)
+};
+
+create table course(
+    courseId int primary key,
+    courseName varchar2(20),
+    fees int ,
+    durationYear float
+);
+
+
+SQL> create table course(
+  2      courseId int primary key,
+  3      courseName varchar2(20),
+  4      fees int ,
+  5      durationYear float
+  6  );
+
+
+
+table is created and then we want to add primary key : 
+    alter table course add constraint PK_COURSE primary key(courseId);
+    alter table course add constraint primary key (courseId); 
+
+------------>
+
+Foreign Key :=> 
+    when we use primary key in another table ---> Foreign Key ---> reference 
+---------------------------------------------------------------------------------------------------
+
+
+

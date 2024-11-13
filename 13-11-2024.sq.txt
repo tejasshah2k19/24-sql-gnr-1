@@ -1,0 +1,11 @@
+1) Write an SQL query to create a StudentsGnr table with a PRIMARY KEY on student_id, NOT NULL constraints on first_name and last_name, and a UNIQUE constraint on email.
+
+
+2) Write an SQL query to create an EmployeesGnr table with columns employee_id, first_name, salary, and age, where:
+
+    employee_id is the PRIMARY KEY.
+    first_name cannot be NULL.
+    salary should be greater than 0 (use CHECK constraint).
+    age should be between 18 and 65 (use CHECK constraint).
+
+    
