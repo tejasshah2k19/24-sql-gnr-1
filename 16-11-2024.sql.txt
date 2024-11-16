@@ -1,0 +1,29 @@
+Write a query to create a table Student with fields StudentID (Primary Key, Integer), Name (Text, NOT NULL), Age (Integer), and Class (Text).
+
+Write a query to add a column Email to the Student table.
+
+Write a query to modify the Age column in the Student table to set a default value of 18.
+
+Write a query to insert a record into the Student table with own sample data.
+
+Write a query to update the Class of a student whose StudentID is 1 to "12th Grade".
+
+Write a query to increment the Age of all students by 1 year.
+
+Write a query to delete a record from the Student table where StudentID is 3.
+
+Write a query to delete all students who belong to the class "10th Grade".
+
+Write a query to add a CHECK constraint ensuring Age is greater than or equal to 5 in the Student table.
+
+Write a query to add a NOT NULL constraint to the Name column in the Student table.
+
+Write a query to ensure that the Email column in the Student table contains unique values.
+
+Write a query to set StudentID as the primary key for the Student table.
+
+Write a query to retrieve unique Class values from the Student table.
+
+Write a query to retrieve all student records, ordered by Age in ascending order.
+
+Write a query to retrieve all student records, ordered by Class in descending order.
