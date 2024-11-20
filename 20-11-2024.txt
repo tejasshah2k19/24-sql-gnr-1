@@ -1,0 +1,74 @@
+employee 
+    employeeId [Primary Key]
+    firstName
+    lastName 
+    email 
+    password 
+    department 
+
+
+
+ HR -- > employee -> Form -> 
+    employeeId?    
+
+
+    1       ram     patel       ram@gmail.com       ram     Admin 
+    2       laxman  patel       laxman@gmail.com    laxman  Sales 
+    3       sita    patel       sita@gmail.com      sita    HR
+
+
+
+    SQL : Oracle ---->  Sequence  
+        mysql :  auto_increment 
+        pg    :  identity 
+
+
+
+Syntax : 
+
+        CREATE SEQUENCE sequence_name
+            START WITH iniitial_value 
+            INCREMENT BY increment_value
+            MAXVALUE max_value 
+            CYCLE; 
+
+
+    #Sequence will start from 100 and increment by 1 -- no max value 
+        CREATE SEQUENCE employee_seq 
+            START WITH 100 
+            INCREMENT By 1 ; 
+
+
+    #Sequence will start from 100 and increment by 1 -- upto 200 and then it stop  
+        CREATE SEQUENCE employee_seq 
+            START WITH 100 
+            INCREMENT By 1 
+            MAXVALUE 200; 
+
+
+    #Sequence will start from 100 and increment by 1 -- upto 200 and then RESET to 100   
+        CREATE SEQUENCE employee_seq 
+            START WITH 100 
+            INCREMENT By 1 
+            MAXVALUE 200
+            CYCLE; 
+        
+
+
+create table employee20 (employeeId number(10),ename varchar2(20));
+
+create sequence emp_seq start with 1 increment by 1;
+
+insert into employee20 (employeeId,ename) values (emp_seq.nextval,'Ram');
+insert into employee20 (employeeId,ename) values (emp_seq.nextval,'Sita');
+insert into employee20 (employeeId,ename) values (emp_seq.nextval,'Laxman');
+
+drop sequence emp_seq; //remove your sequence from db memory 
+
+
+-------------------------------------------------------------------------------------------------
+
+
+
+
+

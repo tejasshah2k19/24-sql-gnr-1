@@ -1,0 +1,42 @@
+Foreign key 
+
+
+
+create table course(courseId int primary key,courseName varchar2(20));
+
+create table student(studentId int Primary key,name varchar2(20),courseId int references course(courseId));
+
+create table student(studentId int Primary key,name varchar2(20),courseId int ,
+                        courseId Foreign key references course(courseId));
+
+
+
+
+-------------------------------------------------------------------
+
+constraint must have its unique name 
+
+email unique 
+userId primary key 
+
+
+alter table users add primary key pk1234 userId; 
+alter table users drop constraint pk1234; 
+
+
+select * from course; 
+
+select * from student; {courseId}
+
+
+
+select student.*,course.* from student,course; //t1:r * t2:r 
+
+Join -> 
+
+select student.*,course.* from student,course where student.courseId = course.courseId; 
+
+****select * from student union select * from course; 
+
+
+-------------------------------------------------------------------

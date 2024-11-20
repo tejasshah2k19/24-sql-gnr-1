@@ -1,0 +1,31 @@
+Question: Create a table Employee with the following columns:
+
+EmployeeID (Primary Key, auto-increment using a sequence)
+FullName (VARCHAR2, cannot be null)
+DateOfBirth (DATE, must be before the current date)
+Email (unique constraint)
+Salary (NUMBER, must be greater than 0)
+DepartmentID (Foreign Key referencing Department.DepartmentID)
+
+
+Create a sequence for the EmployeeID.
+
+
+
+Question: Perform the following changes on the Employee table:
+Add a new column PhoneNumber (VARCHAR2, 10 digits, must be unique).
+Modify the Salary column to have a default value of 30000.
+Rename the FullName column to EmployeeName.
+Drop the Email column.
+
+
+
+Question: Modify the Department table to:
+Add a check constraint ensuring Budget (NUMBER) is greater than 10000.
+Add a NOT NULL constraint to the DepartmentName column.
+Remove an existing default value from the Location column.
+
+
+Add a virtual column Tax in the Employee table that calculates 10% of Salary.
+
+
