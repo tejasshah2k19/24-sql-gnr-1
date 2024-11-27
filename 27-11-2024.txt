@@ -1,0 +1,114 @@
+Join -> 
+    join is used to combine rows / records / data from more than 1 table using common column. 
+
+     PK 
++----------+-----------------+
+| courseId | name  | Fees    |
++----------+------------------+
+|        1 | BCA   | 2500    |
+|        2 | MCA   | 3500    |
+|        3 | MSCIT | 4500    |
+|        4 | BBA   | 1500    |
+|        5 | CS    | 8550    |    
+------------------------------
+
+                             FK                
++--------+---------------+-----------+
+| studId | firstName     |  courseId |
++--------+---------------+-----------+
+|      1 | Jalp          |      1    |
+|      2 | Priti         |      1    |
+|      3 | Yash          |      2    |
+|      4 | Harshika      |      4    |
+|      5 | Jay           |      1    |
+|      6 | Parth         |      4    |
+|      7 | Harsh         |      3    |
+|      8 | Jeet          |      3    |
+|      9 | Aditya        |      1    |
+|     10 | Rock          |           |
+--------------------------------------
+
+
+firstName , name 
+
+
+cartesian product -> table1 row  * table2 row 
+select student.firstName, course.name from student,course; 
+
+
+select student.first_Name, courses.name from student,courses where student.course_Id  = courses.course_Id; 
+
+
+-------------------------------------------
+ CREATE TABLE COURSES(
+     COURSE_ID INT PRIMARY KEY,
+     NAME VARCHAR2(30),
+     FEES INT
+ );
+
+ CREATE TABLE STUDENT(
+     STUDENT_ID INT PRIMARY KEY,
+     FIRST_NAME VARCHAR2(30),
+     COURSE_ID INT REFERENCES COURSES(COURSE_ID)
+);
+
+
+ INSERT INTO Courses (course_Id, name, Fees) VALUES (1, 'BCA', 2500);
+INSERT INTO Courses (course_Id, name, Fees) VALUES (2, 'MCA', 3500);
+INSERT INTO Courses (course_Id, name, Fees) VALUES (3, 'MSCIT', 4500);
+INSERT INTO Courses (course_Id, name, Fees) VALUES (4, 'BBA', 1500);
+INSERT INTO Courses (course_Id, name, Fees) VALUES (5, 'CS', 8550);
+
+
+
+INSERT INTO STUDENT VALUES (1,'JALP',1);
+INSERT INTO STUDENT VALUES (2,'PRITI',1);
+INSERT INTO STUDENT VALUES (3,'YASH',2);
+INSERT INTO STUDENT VALUES (4,'HARSHIKA',4);
+INSERT INTO STUDENT VALUES (5,'JAY',1);
+INSERT INTO STUDENT VALUES (6,'PARTH',4);
+INSERT INTO STUDENT VALUES (7,'HARSH',3);
+INSERT INTO STUDENT VALUES (8,'JEET',3);
+INSERT INTO STUDENT VALUES (9,'ADITYA',1);
+INSERT INTO STUDENT (STUDENT_ID,FIRST_NAME)VALUES (10,'Rock');
+
+----------------------------------------------------------------------------------------
+SQL joins -> 
+
+Inner Join 
+    matching records from the both tables 
+Outer Join 
+    Left Outer Join   : left join 
+    Right Outer Join  : right join 
+    Full Outer Join   : full join 
+
+
+PK : not null , UNIQUE 
+
+FK : null , duplicate 
+
+
+matching from both the tables 
+default join is inner join ? true 
+
+select student.first_Name, courses.name from student,courses where student.course_Id  = courses.course_Id; 
+
+select student.first_Name, courses.name from student inner join courses on student.course_Id  = courses.course_Id; 
+ 
+select student.first_Name, courses.name from student join courses on student.course_Id  = courses.course_Id; 
+
+
+OUTER JOIN 
+
+Left Join 
+select student.first_Name, courses.name from student left join courses on student.course_Id  = courses.course_Id; 
+
+Right Join 
+select student.first_Name, courses.name from student right join courses on student.course_Id  = courses.course_Id; 
+
+Full Join {left + right }
+select student.first_Name, courses.name from student full outer join courses on student.course_Id  = courses.course_Id; 
+
+
+SELF Join 
+    
