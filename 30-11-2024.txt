@@ -1,0 +1,74 @@
+Self Join -> 
+
+        when we join table itself 
+
+        same table will use for join 
+
+
+Employee 
+employee_id     first_Name      last_name    email       department         z 
+1               X               XX          x@x.com       HR               4
+2               Y               YY          y@y.com       Admin            5  
+3               Z               ZZ          z@z.com       MKT              5 
+4               P               PP          p@p.com       HR               - 
+5               Q               QQ          q@q.com       Digital          -
+
+
+***AVOID*** 
+Manager 
+managerId       employee_id
+4               1
+5               2
+5               3 
+
+
+select e.first_Name,m.first_name as manager_name from employee e,employee m where e.employee_id = m.managerId; 
+
+
+create table employees(
+    employee_id int primary key,
+    first_Name VARCHAR2(20),
+    last_name VARCHAR2(20),
+    email VARCHAR2(20),
+    department VARCHAR2(20),
+    managerId int
+);
+
+create sequence emp_seq start with 1 increment by 1; 
+
+
+insert into employees (employee_id,first_name,last_name,email,department,managerId)values (emp_seq.nextval,'x','xx','x@x.com','HR',4);
+insert into employees (employee_id,first_name,last_name,email,department,managerId)values (emp_seq.nextval,'y','yy','y@y.com','Admin',5);
+insert into employees (employee_id,first_name,last_name,email,department,managerId)values (emp_seq.nextval,'z','zz','z@z.com','MKT',5);
+insert into employees (employee_id,first_name,last_name,email,department)values (emp_seq.nextval,'p','pp','p@p.com','HR');
+insert into employees (employee_id,first_name,last_name,email,department)values (emp_seq.nextval,'q','qq','q@q.com','Digital');
+
+
+
+customer 
+
+customerId      name    city    supervisorId 
+1               X       Ahd
+2               Y       Gnr         1 
+3               Z       Ahd         1
+4               P       Gnr         5
+5               Q       Surat 
+
+
+
+customer 
+
+customerId      name    city      
+1               X       Ahd
+2               Y       Gnr           
+3               Z       Ahd          
+4               P       Gnr          
+5               Q       Surat 
+
+
+1) supervisor -> employee 
+2) print supervisor name who manages highest employees 
+3) print supervisor name 
+4) employee name , manager name  , if supervisor is not present print MANAGER 
+
+---------------------------------------------------------------------------------------
