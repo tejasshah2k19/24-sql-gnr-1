@@ -1,0 +1,18 @@
+customer 
+
+customerId      name    city      
+1               X       Ahd
+2               Y       Gnr           
+3               Z       Ahd          
+4               P       Gnr          
+5               Q       Surat 
+
+
+
+1) count how many customers lives in ahmedabad 
+2) add new column tax in customer table and fill some random values in that column
+3) print customer who pays highest tax 
+4) print customer who pays lowest tax 
+5) print total tax collection by all customers 
+6) print total tax collection by gandhinagar city customers 
+7) find the avg tax by city 
