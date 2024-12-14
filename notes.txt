@@ -470,6 +470,8 @@ ravan gajjar
 select * from students order by firstName asc, lastName desc; 
 
 -------------------------------------------------------------------------------------
+https://www.w3resource.com/sql-exercises/sql-aggregate-functions.php
+-------------------------------------------------------------------------------------
 
 
 ERD-> 26th 

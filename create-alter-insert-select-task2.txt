@@ -32,6 +32,8 @@
 
 
 
+create table employees (employee_id int primary key, first_name varchar2(20), last_name varchar2(20),position varchar2(20), salary int)
+
 INSERT INTO Employees (employee_id, first_name, last_name, position, salary)
 VALUES 
 (1, 'John', 'Doe', 'Manager', 75000);

@@ -17,6 +17,10 @@ customerId      name    city
 6) print total tax collection by gandhinagar city customers 
 7) find the avg tax by city 
 
+select avg(tax) from customer;
+
+select avg(tax) from customer group by city;
+ 
 
 
 Table : salesman

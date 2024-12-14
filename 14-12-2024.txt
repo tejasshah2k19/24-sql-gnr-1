@@ -1,0 +1,22 @@
+select * from employees;
+select avg(salary) from employees group by position ;
+
+select position,avg(salary) from employees group by position having avg(salary) > 40000;
+
+
+
+when we want club data using a common group , by city , by lastName , by department 
+        we will use group by 
+
+if you want to add condition in group by query then we need to use having 
+can we use where in group by query ? yes 
+how ? 
+you can use before group by 
+
+
+select position,avg(salary) from employees where salary > 20000  group by position having avg(salary) > 40000;
+
+
+
+find -> count -> group by -> 
+
