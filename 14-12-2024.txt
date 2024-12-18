@@ -20,3 +20,41 @@ select position,avg(salary) from employees where salary > 20000  group by positi
 
 find -> count -> group by -> 
 
+        select * from employees;
+        select avg(salary) from employees group by position ;
+
+		select position,avg(salary) from employees group by position ;
+
+		select position,avg(salary) from employees  where salary > 40000 group by position having avg(salary) > 70000;
+
+        select position,avg(salary) from employees group by position having avg(salary) > 40000;
+
+
+
+
+--------------------------------------------------------
+
+order 
+
+
+select customer_id , max(purch_amt) from orders;
+3002,5760 
+
+
+-----------------------------------------------------------------------------
+
+
+    
+    
+select * from orders
+
+select max(purch_amt) from orders
+
+select customer_id from orders where purch_amt = (select max(purch_amt) from orders); 
+
+select * from customer where customer_id =  (select customer_id from orders where purch_amt = (select max(purch_amt) from orders)); 
+
+-----------------------------------------------------------------------------------
+
+
+

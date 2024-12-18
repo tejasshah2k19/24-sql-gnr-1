@@ -66,6 +66,63 @@ customer_id |   cust_name    |    city    | grade | salesman_id
 
 
 
+
+
+CREATE TABLE Customer (
+    customer_id INT PRIMARY KEY,
+    cust_name VARCHAR(50),
+    city VARCHAR(50),
+    grade INT,
+    salesman_id INT
+);
+
+
+INSERT INTO Customer (customer_id, cust_name, city, grade, salesman_id) 
+VALUES (3002, 'Nick Rimando', 'New York', 100, 5001);
+
+INSERT INTO Customer (customer_id, cust_name, city, grade, salesman_id) 
+VALUES (3007, 'Brad Davis', 'New York', 200, 5001);
+
+INSERT INTO Customer (customer_id, cust_name, city, grade, salesman_id) 
+VALUES (3005, 'Graham Zusi', 'California', 200, 5002);
+
+INSERT INTO Customer (customer_id, cust_name, city, grade, salesman_id) 
+VALUES (3008, 'Julian Green', 'London', 300, 5002);
+
+INSERT INTO Customer (customer_id, cust_name, city, grade, salesman_id) 
+VALUES (3004, 'Fabian Johnson', 'Paris', 300, 5006);
+
+
+CREATE TABLE orders (
+    ord_no INT PRIMARY KEY,
+    purch_amt DECIMAL(10, 2),
+    ord_date DATE,
+    customer_id INT,
+    salesman_id INT
+);
+
+INSERT INTO orders (ord_no, purch_amt, ord_date, customer_id, salesman_id) 
+VALUES (70001, 150.5, TO_DATE('2012-10-05', 'YYYY-MM-DD'), 3005, 5002);
+
+INSERT INTO orders (ord_no, purch_amt, ord_date, customer_id, salesman_id) 
+VALUES (70009, 270.65, TO_DATE('2012-09-10', 'YYYY-MM-DD'), 3001, 5005);
+
+INSERT INTO orders (ord_no, purch_amt, ord_date, customer_id, salesman_id) 
+VALUES (70002, 65.26, TO_DATE('2012-10-05', 'YYYY-MM-DD'), 3002, 5001);
+
+INSERT INTO orders (ord_no, purch_amt, ord_date, customer_id, salesman_id) 
+VALUES (70004, 110.5, TO_DATE('2012-08-17', 'YYYY-MM-DD'), 3009, 5003);
+
+INSERT INTO orders (ord_no, purch_amt, ord_date, customer_id, salesman_id) 
+VALUES (70007, 948.5, TO_DATE('2012-09-10', 'YYYY-MM-DD'), 3005, 5002);
+
+INSERT INTO orders (ord_no, purch_amt, ord_date, customer_id, salesman_id) 
+VALUES (70005, 2400.6, TO_DATE('2012-07-27', 'YYYY-MM-DD'), 3007, 5001);
+
+
+
+
+
 1. Display All Salespeople
 2. Display salesman name and commission
 3. Write a query to display the columns in a specific order, such as order date, salesman ID, order number, and purchase amount for all orders. 
@@ -76,7 +133,7 @@ customer_id |   cust_name    |    city    | grade | salesman_id
 8. Print all customer who's name start with B or N or G 
 9. display all customer whos grade is in the range of 200-500
 10. display customer name with salesman name to identify which customer deal with which salesman 
-11. find out the highest amount order and print customer name who place highest amount order in single order 
+11**. find out the highest amount order and print customer name who place highest amount order in single order 
 12. find out the customer who place lowest amount order 
 13. print salesman name who sale highest in single order 
 14. print salesman name who sale highest in all time order 
