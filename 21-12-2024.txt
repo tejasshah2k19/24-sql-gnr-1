@@ -90,6 +90,63 @@ select * from customers where name like '^[aeiou]%';
 
 
 -----------------------------------------------------------------------------------------------------------
+add more record in customer table :- 
+INSERT INTO Customer (customer_id, cust_name, city, grade, salesman_id) 
+VALUES (4001, 'John', 'Paris', 300, 5006);
+
+INSERT INTO Customer (customer_id, cust_name, city, grade, salesman_id) 
+VALUES (4002, 'Jay', 'Paris', 300, 5006);
+
+INSERT INTO Customer (customer_id, cust_name, city, grade, salesman_id) 
+VALUES (4003, 'Ji', 'Paris', 300, 5006);
+
+INSERT INTO Customer (customer_id, cust_name, city, grade, salesman_id) 
+VALUES (4004, 'Jo', '1st-Avenue', 300, 5006);
+
+INSERT INTO Customer (customer_id, cust_name, city, grade, salesman_id) 
+VALUES (4005, 'Jason', '4th-Street', 300, 5006);
+
+INSERT INTO Customer (customer_id, cust_name, city, grade, salesman_id) 
+VALUES (4006, 'Julian', 'Rio-de-Janeiro', 300, 5006);
+
+INSERT INTO Customer (customer_id, cust_name, city, grade, salesman_id) 
+VALUES (4007, 'Mar2k', 'New-York', 300, 5006);
+ 
+
+INSERT INTO Customer (customer_id, cust_name, city, grade, salesman_id) 
+VALUES (4008, 'Alice1', 'New-York', 300, 5006);
+ 
+
+INSERT INTO Customer (customer_id, cust_name, city, grade, salesman_id) 
+VALUES (4009, 'Alice%John', 'New-York', 300, 5006);
+
+
+
+INSERT INTO Customer (customer_id, cust_name, city, grade, salesman_id) 
+VALUES (4010, 'Alice_John', 'New-York', 300, 5006);
+
+
+INSERT INTO Customer (customer_id, cust_name, city, grade, salesman_id) 
+VALUES (4010, 'J_ohn', 'New-York', 300, 5006);
+
+
+INSERT INTO Customer (customer_id, cust_name, city, grade, salesman_id) 
+VALUES (4011, 'Nina', 'New-York', 300, 5006);
+
+
+
+INSERT INTO Customer (customer_id, cust_name, city, grade, salesman_id) 
+VALUES (4012, 'Bob', 'New-York', 300, 5006);
+
+
+INSERT INTO Customer (customer_id, cust_name, city, grade, salesman_id) 
+VALUES (4013, 'Ana', 'New-York', 300, 5006);
+
+
+INSERT INTO Customer (customer_id, cust_name, city, grade, salesman_id) 
+VALUES (4014, 'Eustacio', 'Eustacio', 300, 5006);
+
+
 
 1)Find customers whose names start with J and have any single character after it:
 This matches names like Jo, Jay, or Ji but not John.
@@ -160,22 +217,46 @@ Harder
 -----------------------------------------------------------------------------------------------------------
 1)Find customers whose names have alternating consonants and vowels (e.g., Joanna, Nina)
 This matches names with a pattern of consonant-vowel pairs.
+SELECT * 
+FROM Customer 
+WHERE CustomerName LIKE '[B-DF-HJ-NP-TV-Z][AEIOU][B-DF-HJ-NP-TV-Z][AEIOU]%';
+
 
 2)Find customers whose names contain at least one digit (e.g., John3, A1ice):
 This matches names containing numeric characters anywhere.
+SELECT * 
+FROM Customer 
+WHERE CustomerName LIKE '%[0-9]%';
+
 
 3)Find customers whose city names end with a digit followed by exactly two letters
 This matches cities like Area7NY, Zone3US.
+SELECT * 
+FROM Customer 
+WHERE City LIKE '%[0-9]__[A-Za-z][A-Za-z]';
 
 need to use string function --> 
 4)Find customers whose names start and end with the same letter, with any characters in between:
 This dynamically matches names like Anna, Bob, or SteveS. (Requires a database with CONCAT and SUBSTR support.)
+SELECT * 
+FROM Customer 
+WHERE CustomerName LIKE CONCAT(SUBSTR(CustomerName, 1, 1), '%', SUBSTR(CustomerName, 1, 1));
 
 5)Find customers whose names have a palindrome structure (e.g., Anna, Bob):
  This identifies palindromic names. Requires support for the REVERSE function.
+SELECT * 
+FROM Customer 
+WHERE CustomerName = REVERSE(CustomerName);
 
 6)Find customers whose names contain all vowels at least once (a, e, i, o, u):
  This matches names like Eustacio or Aurelio.
+SELECT * 
+FROM Customer 
+WHERE CustomerName LIKE '%a%' 
+  AND CustomerName LIKE '%e%' 
+  AND CustomerName LIKE '%i%' 
+  AND CustomerName LIKE '%o%' 
+  AND CustomerName LIKE '%u%';
  
  ---------------------------------------------------------------------------------------------------------
 

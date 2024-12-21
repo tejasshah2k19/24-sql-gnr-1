@@ -93,6 +93,8 @@ INSERT INTO Customer (customer_id, cust_name, city, grade, salesman_id)
 VALUES (3004, 'Fabian Johnson', 'Paris', 300, 5006);
 
 
+
+
 CREATE TABLE orders (
     ord_no INT PRIMARY KEY,
     purch_amt DECIMAL(10, 2),
