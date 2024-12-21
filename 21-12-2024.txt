@@ -93,37 +93,91 @@ select * from customers where name like '^[aeiou]%';
 
 1)Find customers whose names start with J and have any single character after it:
 This matches names like Jo, Jay, or Ji but not John.
+SELECT * 
+FROM Customer 
+WHERE CustomerName LIKE 'J_';
+
 
 2) Find customers whose names start with J and end with n with any number of characters in between
 This matches names like John, Jason, or Julian.
+SELECT * 
+FROM Customer 
+WHERE CustomerName LIKE 'J%n';
+
 
 3) Find customers whose names have exactly 4 characters:
-his matches names like John, Paul, or Mark.
+This matches names like John, Paul, or Mark.
+SELECT * 
+FROM Customer 
+WHERE CustomerName LIKE '____';
+
 
 4)Find customers whose city name includes a dash (-):
 This matches cities like New-York or Rio-de-Janeiro.
+SELECT * 
+FROM Customer 
+WHERE City LIKE '%-%';
 
 5)Find customers whose names include a character range (A to C):
 This matches names like Alice, Bob, or Charlie.
+SELECT * 
+FROM Customer 
+WHERE CustomerName LIKE '[A-C]%';
 
 6) Find customers whose names include any character not in a specified range ( not A to C):
 This excludes names like Alice, Bob, or Charlie.
+SELECT * 
+FROM Customer 
+WHERE CustomerName LIKE '[^A-C]%';
 
 7)Find customers whose phone numbers contain a dash (-):
 This matches phone numbers like 123-456-7890.
+SELECT * 
+FROM Customer 
+WHERE Phone LIKE '%-%';
 
 8) Find customers whose city name starts with a digit:
 This matches cities like 1st-Avenue or 4th-Street.
+SELECT * 
+FROM Customer 
+WHERE City LIKE '[0-9]%';
 
 9) Find customers whose names include a percent sign (%):
 This matches names like John%Smith.
+SELECT * 
+FROM Customer 
+WHERE CustomerName LIKE '%\%%' ESCAPE '\';
 
 10) Find customers whose names include an underscore (_):
 This matches names like J_Parker.
+SELECT * 
+FROM Customer 
+WHERE CustomerName LIKE '%\_%' ESCAPE '\';
 
 
 
+Harder 
+-----------------------------------------------------------------------------------------------------------
+1)Find customers whose names have alternating consonants and vowels (e.g., Joanna, Nina)
+This matches names with a pattern of consonant-vowel pairs.
 
+2)Find customers whose names contain at least one digit (e.g., John3, A1ice):
+This matches names containing numeric characters anywhere.
+
+3)Find customers whose city names end with a digit followed by exactly two letters
+This matches cities like Area7NY, Zone3US.
+
+need to use string function --> 
+4)Find customers whose names start and end with the same letter, with any characters in between:
+This dynamically matches names like Anna, Bob, or SteveS. (Requires a database with CONCAT and SUBSTR support.)
+
+5)Find customers whose names have a palindrome structure (e.g., Anna, Bob):
+ This identifies palindromic names. Requires support for the REVERSE function.
+
+6)Find customers whose names contain all vowels at least once (a, e, i, o, u):
+ This matches names like Eustacio or Aurelio.
+ 
+ ---------------------------------------------------------------------------------------------------------
 
 
 
