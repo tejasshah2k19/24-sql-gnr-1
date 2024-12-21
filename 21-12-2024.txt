@@ -1,0 +1,138 @@
+
+Table: Customer 
+customer_id |   cust_name    |    city    | grade | salesman_id 
+-------------+----------------+------------+-------+-------------
+        3002 | Nick Rimando   | New York   |   100 |        5001
+        3007 | Brad Davis     | New York   |   200 |        5001
+        3005 | Graham Zusi    | California |   200 |        5002
+        3008 | Julian Green   | London     |   300 |        5002
+        3004 | Fabian Johnson | Paris      |   300 |        5006
+        3009 | Geoff Cameron  | Berlin     |   100 |        5003
+        3003 | Jozy Altidor   | Moscow     |   200 |        5007
+        3001 | Brad Guzan     | London     |       |        5005
+
+
+
+exact match 
+select * from customer where city = 'Moscow'; 
+
+
+regEx partial match 
+list out all the customers who lives in city which starting letter is 'M' 
+list out all the customers who lives in city which starting letter is 'Mo'
+start with 'm' and ends with 'z' 
+it contains m in any position 
+
+
+1)start 
+2)end 
+3)any 
+
+
+use : => wild card 
+total we have 6 wild card  characters in sql {oracle,mysql,postgres,mssql}
+
+%  : 0 or N characters 
+_  : 1 , single character
+[] : [abc] character set - any single character from bracket {oracle,mssql} 
+^  : negative , not {oracle,mssql}
+-  : range [a-f]  {oracle,mssql} 
+
+
+1) % -> 0 or N character(s)
+customer name start with 'A' -> AXXXXX  : correct 
+                             -> A       : correct 
+                             -> XXAXXXX : incorrect 
+                        'A%'
+
+customer name ends with 'A'  ->XXXXXXA 
+                        '%A'
+
+customer name contains A    -> XXXAXXX 
+                            -> A 
+                            -> AXA 
+                            -> XXA
+                            -> AXX 
+                        '%A%'
+
+2) _ => underscore -> single character 
+
+customer name contains second and fourth letter 'A'
+                                              '_A_A%'
+customer name who's name end with A and second character is B 
+                                               '_B%A'
+city name start with 'S' and having any 2 characters and end with 'AT';
+                                                'S__%AT'
+ 
+
+question:=>
+customer who's name start with [vowel] => a e i o u
+select * from customers where name like 'a%' or name like 'e%' or name like 'i%'; 
+
+
+3) [] , character set 
+customer who's name start with [vowel] => a e i o u
+select * from customers where name like '[aeiou]%';
+
+customer who's name start with abcdefghijklmno 
+select * from customers where name like '[abcdefghijklmno]%';
+
+
+
+4) - , range 
+customer who's name start with abcdefghijklmno 
+select * from customers where name like '[a-o]%';
+
+
+5)^ , negative , not , negation 
+customer who's name does not start with vowel 
+select * from customers where name like '^[aeiou]%';
+
+
+-----------------------------------------------------------------------------------------------------------
+
+1)Find customers whose names start with J and have any single character after it:
+This matches names like Jo, Jay, or Ji but not John.
+
+2) Find customers whose names start with J and end with n with any number of characters in between
+This matches names like John, Jason, or Julian.
+
+3) Find customers whose names have exactly 4 characters:
+his matches names like John, Paul, or Mark.
+
+4)Find customers whose city name includes a dash (-):
+This matches cities like New-York or Rio-de-Janeiro.
+
+5)Find customers whose names include a character range (A to C):
+This matches names like Alice, Bob, or Charlie.
+
+6) Find customers whose names include any character not in a specified range ( not A to C):
+This excludes names like Alice, Bob, or Charlie.
+
+7)Find customers whose phone numbers contain a dash (-):
+This matches phone numbers like 123-456-7890.
+
+8) Find customers whose city name starts with a digit:
+This matches cities like 1st-Avenue or 4th-Street.
+
+9) Find customers whose names include a percent sign (%):
+This matches names like John%Smith.
+
+10) Find customers whose names include an underscore (_):
+This matches names like J_Parker.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
