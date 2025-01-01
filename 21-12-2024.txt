@@ -149,7 +149,7 @@ VALUES (4014, 'Eustacio', 'Eustacio', 300, 5006);
 
 
 1)Find customers whose names start with J and have any single character after it:
-This matches names like Jo, Jay, or Ji but not John.
+This matches names like Jo, or Ji but not John.
 SELECT * 
 FROM Customer 
 WHERE CustomerName LIKE 'J_';

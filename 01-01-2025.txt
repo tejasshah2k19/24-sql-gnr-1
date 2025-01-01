@@ -1,0 +1,13 @@
+String --> 
+
+1) print customer detail in single column , we need to print customername , city in single value with   
+    title customerDetail 
+2) write a query to extract first 5 character from customner name, 
+3) write a query to extract first 5 character from customner name if customer name is less than 5 characters 
+    then ignore their name 
+4) count how many customers having name lenght less than 5 
+5) print customer name in upper case and city in lower case. 
+6) print customer name's first character in uppercase and restin lowercase. 
+7) print all customer's data who's name starts and ends with same character. 
+
+

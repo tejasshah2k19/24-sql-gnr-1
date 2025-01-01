@@ -1,0 +1,63 @@
+String function 
+
+ CONCAT(): Concatenate Strings
+ UPPER() and LOWER()
+ CHAR_LENGTH()# / CHARACTER_LENGTH()#: Find String Length
+ LENGTH()*
+ REPLACE()
+ SUBSTRING()#/SUBSTR()*
+ LEFT()# and RIGHT()#: Extract Substring from Left or Right
+ INSTR()
+ TRIM() 
+ REVERSE()
+
+
+
+ firstname  lastname 
+
+
+ Name 
+
+
+select concat(firstname,lastName) from customers; 
+
+select * from customer where firstname = reverse(firstname)
+
+
+
+
+select concat(address,city) as Address from customers
+select concat(concat(address,city),country) as Address from customers
+
+
+select upper(customername) as Name from customers
+select lower(customername) as Name from customers
+
+
+select customername,length(customername) as Name from customers
+
+
+select customername,REPLACE(customername,'a','X') from customers ;
+
+
+select customername,substring(customername,1,3) as shortName from customers; 
+
+
+select customername,left(customername,3) as shortName from customers; 
+
+select customername,right(customername,3) as shortName from customers; 
+
+trim -> 
+
+select customername,trim(customername) as shortName from customers; 
+select customername,Ltrim(customername) as shortName from customers; 
+select customername,Rtrim(customername) as shortName from customers; 
+
+instr-> strstr -> 
+
+
+select instr(customername,'roy') from customers; 
+
+select reverse(customername) from customers; 
+
+------------------------------------------------------------------------------------------
