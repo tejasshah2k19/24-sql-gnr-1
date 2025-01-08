@@ -1,0 +1,204 @@
+Date 
+
+
+
+
+In Oracle, 
+both date and time are supported in a different way than the SQL2 standard. 
+Unlike using two separate entities, date and time, Oracle utilizes only one, called DATE. 
+The DATE type is stored in a specific internal format that includes not only the month, day, and year 
+but also the hour, minute, and second.
+
+we can have both the value in single column , date and time 
+
+
+default date format in oracle is DD-MON-YYYY
+
+
+create table users (userId integer primary key,createdAt date ); 
+
+insert into users values (1,'07-Mar-2025'); 
+
+
+above is controll by NLS_DATE_FORMAT parameter that we can modify. 
+
+SELECT
+  value
+FROM
+  V$NLS_PARAMETERS
+WHERE
+  parameter = 'NLS_DATE_FORMAT';
+
+
+try this , 
+SELECT
+  sysdate
+FROM
+  dual;
+
+
+  its not good practise to change the format but if you really need you can change it. 
+
+  ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD';
+
+now try this,
+SELECT
+  sysdate
+FROM
+  dual;
+
+
+
+1. DATE
+Stores date and time values (year, month, day, hour, minute, second).
+Format: DD-MON-YY or YYYY-MM-DD (based on NLS settings).
+Example:
+sql
+Copy code
+
+insert into table_name (date_column) VALUES ('04-Mar-2025');
+
+
+
+**insert into table_name (date_column) VALUES ('2025-01-04');
+
+***INSERT INTO table_name (date_column) VALUES (TO_DATE('2025-01-04', 'YYYY-MM-DD'));
+Supports:
+Year, Month, Day
+Hour, Minute, Second
+
+
+
+2. TIMESTAMP
+Stores date and time values with fractional seconds.
+Format: YYYY-MM-DD HH24:MI:SS.FF
+Example:
+sql
+Copy code
+INSERT INTO table_name (timestamp_column) VALUES (TO_TIMESTAMP('2025-01-04 10:15:30.123', 'YYYY-MM-DD HH24:MI:SS.FF'));
+Supports fractional seconds (up to 9 digits precision).
+856255656->3600
+
+
+
+3. TIMESTAMP WITH TIME ZONE
+Stores date and time values with fractional seconds and a time zone offset.
+Format: YYYY-MM-DD HH24:MI:SS.FF TZR
+Example:
+sql
+Copy code
+INSERT INTO table_name (tz_column) VALUES (TO_TIMESTAMP_TZ('2025-01-04 10:15:30.123 +05:30', 'YYYY
+
+
+
+4. TIMESTAMP WITH LOCAL TIME ZONE
+Stores date and time values normalized to the database time zone but displays them in the session's time zone.
+Example:
+sql
+Copy code
+CREATE TABLE example (ltz_column TIMESTAMP WITH LOCAL TIME ZONE);
+
+
+
+5. INTERVAL YEAR TO MONTH
+Stores a period of time in terms of years and months.
+Example:
+sql
+Copy code
+INTERVAL '2-5' YEAR TO MONTH
+
+
+6. INTERVAL DAY TO SECOND
+Stores a period of time in terms of days, hours, minutes, seconds, and fractional seconds.
+Example:
+sql
+Copy code
+INTERVAL '5 10:30:15.123' DAY TO SECOND
+
+
+
+
+
+
+
+
+
+select now() from dual; 
+
+SELECT EXTRACT(YEAR FROM SYSDATE) FROM DUAL ; 
+
+
+----------------------------------------------------
+
+create table payment with 
+    paymentId : pk
+    customerName : string 
+    paymentDate : date 
+
+    insert 7 records 
+---------------------------------------------------
+
+1) select all customers who place order in march month 
+2) select all customers who place order in past year 
+3) select all custoemrs who place order in 1st week of month 
+4) select all custoemrs who place order in last quater
+5) select all custoemrs who place order in current year 
+-------------------------------------------------------------------------
+
+
+select SYSDATE from dual ; 
+
+ALTER SESSION SET NLS_DATE_FORMAT = 'DD-MON-RRRR'; 
+select SYSDATE from dual ; 
+
+ALTER SESSION SET NLS_DATE_FORMAT = 'DD-MONTH-RRRR DAY';
+select SYSDATE from dual ; 
+08-January-2025 Wednesday 
+
+
+1)find out the first payout date of friday  from hire_date
+SELECT NEXT_DAY(HIRE_DATE,'FRI') from hr.EMPLOYEES;
+
+2) find out the second week payout date from hire_date- pay out day is friday.
+ 08-1-2025->
+   friday ->  10th 
+   friday ->  17th 
+   friday ->  24th
+  select next_day(sysdate,'fri) from dual; 
+  10-01-2025
+  
+  select next_day(sysdate,'fri)+7 from dual; 
+  17-01-2025
+
+  select next_day(sysdate,'fri)+(7*4) from dual; 
+  
+
+3) you will get bonus on your join anniversary date. 
+   you want to check your next anniversary date and day. 
+   360 days -> friday 
+
+   select next_day(hire_date,'Fri') + 360 from hr.EMPLOYEES;
+
+4) count total EMPLOYEES hired by month 
+   Jan : 1 
+   Feb : 3 
+   March : 2 
+   XXXX
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
