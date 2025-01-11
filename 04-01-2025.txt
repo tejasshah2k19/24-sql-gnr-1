@@ -186,6 +186,75 @@ SELECT NEXT_DAY(HIRE_DATE,'FRI') from hr.EMPLOYEES;
    XXXX
 
 
+select sysdate from dual; //today 
+
+signup -> user -> createdAt , updatedAt ,deletedAt  
+post ->  createdAt ,updatedAt,deletedAt 
+order -> createdAt ,updatedAt,deletedAt 
+transaction ->createdAt,updatedAt,deletedAt 
+
+
+select * from users;
+select * from users  where deletedAt is NULL; 
+
+
+
+11-01-2025 : hire_date  
+
+salary -> Wednesday 
+select next_day(hire_date,'Wednesday') from EMPLOYEES; //15-January-2025 
+
+select next_day(hire_date,'Wednesday')+7 from EMPLOYEES; //15-January-2025 
+
+1-01-2025 -> 29 -> 30-01-2025 
+how many days you worked? 
+8  -> 7
+9  -> 6
+11 -> 15
+12 -> 15 
+
+trunc -> truncate -> month quater year 
+
+jan -> goa : 5  
+feb -> mumbai : 3 
+march -> adalaj step well : 1 
+
+
+student 
+payment_date 
+01-01-2025 : 1st 
+01-02-2025
+01-03-2025
+
+extract month 
+
+to_char -> 
+select firstName,to_char(payment_date,'Mon') from student; 
+
+
+1st quater -> goa 
+
+1 year -> quater -> 12 month -> 3 3 3 3 -> 4 
+      jan feb march 
+      april may june 
+      july aug sep 
+      oct nov dec 
+
+
+student 
+payment_date 
+01-01-2025 : 1st 
+01-02-2025 : 1st 
+01-03-2025 : 1st 
+01-04-2025 : 2nd 
+
+select trunc(hire_date,'q') from hr.EMPLOYEES; 
+
+
+20.25 -> 20 
+
+
+11-01-2025 -> month -> 
 
 
 
