@@ -1,0 +1,140 @@
+select add_months(sysdate,2) from dual;
+
+
+select add_months(sysdate,-2) from dual;
+
+
+7 days -> 
+
+select sysdate+7 from dual; 
+
+
+20hrs add -> 
+1 month add ->
+1 quater add ->3*2 
+
+
+
+hire_date --> 
+        5 year -> gold coin -> 
+
+
+        year - current year -> 
+        1-12-2020 : 2020
+        18-1-2025 : 2025 
+                 5 
+     get total months between hire_date - current_date 
+
+
+SELECT MONTHS_BETWEEN(hire_date,sysdate) from EMPLOYEES; 
+
+60 -> gt 
+ 
+
+
+SELECT  MONTHS_BETWEEN(hire_date,sysdate) from EMPLOYEES; 
+
+months--> 
+55.25
+63.25
+11
+12.25
+
+
+SELECT TRUNC(MONTHS_BETWEEN(hire_date,sysdate)) from EMPLOYEES; 
+months--> 
+55
+63
+11
+12
+
+months -> year -> 
+
+SELECT TRUNC(MONTHS_BETWEEN(hire_date,sysdate)/12) from EMPLOYEES; 
+year--> 
+4
+5
+0
+1
+
+
+SELECT MONTHS_BETWEEN('21-NOV-2024','3-NOV-2025') FROM DUAL;
+SELECT MONTHS_BETWEEN('21-NOV-24','3-NOV-25') FROM DUAL;
+
+
+
+
+
+
+
+select first_name , salary , TRUNC(MONTHS_BETWEEN(hire_date,sysdate)/12) YEAR_COMPLETED
+    CASE 
+        WHEN TRUNC(MONTHS_BETWEEN(hire_date,sysdate)/12) >= 5 then 
+            salary * 1.0
+        WHEN TRUNC(MONTHS_BETWEEN(hire_date,sysdate)/12) >= 5 then 
+            salary * 0.5
+        ELSE 
+            0      
+    END AS BONUS 
+from EMPLOYEES; 
+
+
+
+select * from hr.employees;
+
+select  DEPARTMENT_ID from hr.employees;
+
+
+select distinct DEPARTMENT_ID from hr.employees;
+
+
+select distinct DEPARTMENT_ID from hr.employees where department_id is not null;
+
+
+SELECT FIRST_NAME , DEPARTMENT_ID , SALARY ,
+    DECODE ( DEPARTMENT_ID , 20 , SALARY * 1.0
+                           , 50 , SALARY * 0.5
+                           , 90 , SALARY * 0.3) NEW_SALARY
+    FROM EMPLOYEES;
+
+
+year 1990  10%
+year 1995  15% 
+year 1980  20% 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

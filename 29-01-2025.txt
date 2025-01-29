@@ -1,0 +1,38 @@
+Null functions --> 
+
+NVL() 
+COALESCE()
+
+
+
+employees 
+
+eid     first_name  salary 
+1       A           12000
+2       B           15000
+3       C           16000
+4       D           NULL 
+
+
+Add 5000Rs BONUS in salary 
+
+
+select NVL(salary,0) + 5000 from employees; 
+
+
+select salary* NVL(COMMISSION_PCT,0) from hr.employees
+
+
+
+
+------------------------------------------------------------------------------
+
+1) Print employees name with their manager name. if employee is manager or any employee does not have manager 
+    then print NA 
+2) Print employee work detail with following data 
+        first_name , job detail , department detail 
+3) list all employees who doesnot belongs to any department 
+4)  find the employee  who work highest in 2014 and 2016 in single day 
+5)  find the employee who work max hours in account team 
+6) list all the employee who works  in account department with Africa Region 
+
